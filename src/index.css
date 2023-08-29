@@ -84,3 +84,38 @@ input {
 .icon:hover {
   color: #5c7a89; /* Darker shade on hover */
 }
+
+
+.firework {
+    position: fixed; /* Changed to fixed to position the firework in the middle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering the firework */
+    width: 5px;
+    height: 5px;
+    background: #ff0;
+    animation: explode 700ms forwards, rise 700ms forwards;
+    z-index: 1000; /* Placing it above other elements */
+}
+
+@keyframes explode {
+    from {
+        width: 5px;
+        height: 5px;
+        opacity: 1;
+    }
+    to {
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-30px);
+    }
+}
