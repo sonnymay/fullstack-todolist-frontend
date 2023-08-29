@@ -88,26 +88,25 @@ input {
 
 .firework {
     position: fixed;
-    top: 50%;
+    top: calc(50% - 250px);
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, rgba(255,0,0,1), rgba(255,255,0,1), rgba(0,0,255,1), rgba(0,255,0,1));
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    animation: explode 700ms forwards, rise 700ms forwards;
+    animation: explode 1s forwards, rise 1s forwards;
     z-index: 1000;
 }
 
 @keyframes explode {
     from {
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
         opacity: 1;
     }
     to {
-        width: 150px;  /* Increased size for a bigger explosion */
-        height: 150px;
+        width: 500px;  /* Bigger explosion */
+        height: 500px;
         opacity: 0;
     }
 }
@@ -117,6 +116,6 @@ input {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-100px); /* Increased rising height */
+        transform: translateY(-200px); /* Increased rising height */
     }
 }
