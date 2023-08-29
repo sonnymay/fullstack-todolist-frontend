@@ -87,26 +87,27 @@ input {
 
 
 .firework {
-    position: fixed; /* Changed to fixed to position the firework in the middle */
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centering the firework */
-    width: 5px;
-    height: 5px;
-    background: #ff0;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255,0,0,1), rgba(255,255,0,1), rgba(0,0,255,1), rgba(0,255,0,1));
+    border-radius: 50%;
     animation: explode 700ms forwards, rise 700ms forwards;
-    z-index: 1000; /* Placing it above other elements */
+    z-index: 1000;
 }
 
 @keyframes explode {
     from {
-        width: 5px;
-        height: 5px;
+        width: 10px;
+        height: 10px;
         opacity: 1;
     }
     to {
-        width: 50px;
-        height: 50px;
+        width: 150px;  /* Increased size for a bigger explosion */
+        height: 150px;
         opacity: 0;
     }
 }
@@ -116,6 +117,6 @@ input {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-30px);
+        transform: translateY(-100px); /* Increased rising height */
     }
 }
